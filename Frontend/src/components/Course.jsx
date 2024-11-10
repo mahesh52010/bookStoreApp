@@ -7,7 +7,7 @@ function Course() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
+        const res = await axios.get("mongodb+srv://maheshyandrapu78:Mahesh%401234@mahesh.zit48.mongodb.net/?retryWrites=true&w=majority&appName=Mahesh/book");
         console.log(res.data);
         setBook(res.data);
       } catch (error) {
