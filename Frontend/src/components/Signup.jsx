@@ -14,29 +14,31 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const userInfo = {
-      fullname: data.fullname,
-      email: data.email,
-      password: data.password,
-    };
-    await axios
-    const res = await axios.post("https://bookstoreapp-t2hu.onrender.com/user/signup", userInfo);
-   .then((res) => {
-        console.log(res.data);
-        if (res.data) {
-          toast.success("Signup Successfully");
-          navigate(from, { replace: true });
-        }
-        localStorage.setItem("Users", JSON.stringify(res.data.user));
-      })
-      .catch((err) => {
-        if (err.response) {
-          console.log(err);
-          toast.error("Error: " + err.response.data.message);
-        }
-      });
+  
+const onSubmit = async (data) => {
+  console.log("Form submitted with data:", data); // Log submitted data
+  const userInfo = {
+    fullname: data.fullname,
+    email: data.email,
+    password: data.password,
   };
+  try {
+    const res = await axios.post("https://bookstoreapp-t2hu.onrender.com/user/signup", userInfo);
+    console.log("Response from backend:", res.data); // Log the response
+    if (res.data) {
+      toast.success("Signup Successfully");
+      navigate(from, { replace: true });
+    }
+    localStorage.setItem("Users", JSON.stringify(res.data.user));
+  } catch (err) {
+    if (err.response) {
+      console.log(err);
+      toast.error("Error: " + err.response.data.message);
+    } else {
+      console.error("Error:", err); // Log any other errors
+    }
+  }
+};
   return (
     <>
       <div className="flex h-screen items-center justify-center">
