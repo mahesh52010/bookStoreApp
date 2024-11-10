@@ -64,9 +64,11 @@ function Freebook() {
         <div>
           <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium veritatis alias pariatur ad dolor repudiandae eligendi
-            corporis nulla non suscipit, iure neque earum?
+            Hello, and welcome to BookStore! 📚
+
+Get ready to explore and learn something new every day! Our platform offers a diverse selection of courses, books, and resources to help you expand your knowledge and achieve your goals. Whether you're a beginner or looking to advance your skills, there's something here for everyone. Simply enter your email to get started on your journey with us!
+
+Start Learning Today – The world of knowledge is just a click away!
           </p>
         </div>
 
