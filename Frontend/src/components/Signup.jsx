@@ -23,7 +23,7 @@ const onSubmit = async (data) => {
     password: data.password,
   };
   try {
-    const res = await axios.post("https://bookstoreapp-t2hu.onrender.com/user/signup", userInfo);
+    const res = await axios.post("https://bookstoreapp-b38q.onrender.com/user/signup", userInfo);
     console.log("Response from backend:", res.data); // Log the response
     if (res.data) {
       toast.success("Signup Successfully");
